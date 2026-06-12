@@ -1,0 +1,91 @@
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  background: var(--void);
+  border-bottom: 1px solid rgba(78,168,58,.12);
+}
+.logo {
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: .06em;
+  text-transform: lowercase;
+  color: var(--pale);
+}
+.logo b {
+  font-family: 'UnifrakturMaguntia', serif;
+  font-size: 1.9rem;
+  font-weight: 400;
+  color: var(--spore);
+  vertical-align: -.08em;
+}
+.links {
+  display: flex;
+  gap: 1.6rem;
+  list-style: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.links a {
+  font-family: var(--font-barlow), sans-serif;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(237,234,226,.78);
+  transition: color .2s;
+}
+.links a:hover { color: var(--bright); }
+.right {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+}
+.motto {
+  font-family: var(--font-serif), serif;
+  font-style: italic;
+  font-size: .74rem;
+  color: rgba(237,234,226,.4);
+  transition: opacity .25s;
+}
+.open .motto { opacity: 0; pointer-events: none; }
+.searchBox {
+  font-family: var(--font-barlow), sans-serif;
+  font-size: .8rem;
+  background: rgba(237,234,226,.06);
+  border: 1px solid rgba(237,234,226,.2);
+  color: var(--pale);
+  padding: .35em .8em;
+  width: 0;
+  opacity: 0;
+  transition: width .25s, opacity .25s;
+  outline: none;
+}
+.searchBox::placeholder { color: rgba(237,234,226,.3); }
+.searchBox:focus { border-color: var(--spore); }
+.open .searchBox { width: 200px; opacity: 1; }
+.searchBtn {
+  background: none;
+  border: none;
+  color: rgba(237,234,226,.5);
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+  padding: .1rem .3rem;
+  transition: color .2s;
+}
+.searchBtn:hover { color: var(--spore); }
+
+@media (max-width: 960px) {
+  .motto { display: none; }
+}
+@media (max-width: 600px) {
+  .links { display: none; }
+}
